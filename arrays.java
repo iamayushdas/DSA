@@ -45,14 +45,30 @@ public class arrays {
         return span;
     }
 
+    // public static void firstIndex(int[] arr, int ele){
+    //     for(int i = 0; i<arr.length; i++){
+    //         if(arr[i] == ele){
+    //             System.out.println("firstIndex of " + ele + " is " +i);
+
+    //         }
+    //     }
+    // }
+
+    //  SPAN OF ARRAY USING DIFF APPROACH
+
+
     public static void main(String[] args){
         int n = scn.nextInt();
         int[] arr = new int[n];
-        // int data = scn.nextInt();
+        int ele = scn.nextInt();
         takeInput(arr);
         // printElements(arr);
         // findElement(arr, data);
-       spanArray(arr);
+        // spanArray(arr);
+        firstIndex(arr, ele);
+
+        // System.out.println(maximum(arr);
+        
 
     }
 }

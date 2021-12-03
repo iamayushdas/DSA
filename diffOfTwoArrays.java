@@ -31,12 +31,13 @@ public class diffOfTwoArrays {
             j--;
             k--;
         }
+        return ans;
     }
     public static void main(String[] args){
         Scanner scn = new Scanner(System.in);
         int n1 = scn.nextInt();
         int[] A = new int[n1];
-        for(int i = 0; i<n2; i++){
+        for(int i = 0; i<n1; i++){
             A[i] = scn.nextInt();
         }
 
@@ -50,10 +51,21 @@ public class diffOfTwoArrays {
 
         // EDGE CASES
 
-        //  1.  First non-zero index
-        int index = 0;
+        //  1.  First non-zero index -- fnzi
+        int fnzi = -1;
         for(int i = 0; i<ans.length; i++){
-            if(ans[i] )
+            if(ans[i] != 0){
+                fnzi = i;
+                break;
+            }
+        }
+
+        if(fnzi == -1){
+            System.out.println("0");
+        }
+
+        for(int i = fnzi ; i<ans.length ; i++){
+            System.out.println(ans[i]);
         }
     }
 }

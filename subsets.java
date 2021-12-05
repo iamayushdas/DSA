@@ -11,8 +11,11 @@ public class subsets {
             int temp = i;
             // i=0 -----> 0 0 0
             for(int j = n-1; j>=0 ; j--){
+
+                // temp ko binary me convert krra hoon
                 int r = temp%2;
                 temp = temp/2;
+
                 if(r == 0){
                     // -
                     str = "-\t" + str;

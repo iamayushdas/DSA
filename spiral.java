@@ -34,14 +34,29 @@ public class spiral {
                 System.out.println(arr[maxR][j]);
                 count++;
             }
-            maxR++;
+            maxR--;
 
-            
+            for(int i = maxR; i>=minR && count<total ; i--){
+                System.out.println(arr[i][maxC]);
+                count++;
+            }
+            maxC--;
+
+            for(int j = maxC ; j>=minC && count<total; j--){
+                System.out.println(arr[minR][j]);
+                count++;
+            }
+            minR++;
+
         }
 
 
     }
     public static void main(String[] args){
-
+        int n = scn.nextInt();
+        int m = scn.nextInt();
+        int[][] arr = new int[n][m];
+        input(arr);
+        spiral(arr);
     }
 }

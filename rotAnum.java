@@ -10,9 +10,7 @@ public class rotAnum {
         return count;
     }
     public static void rotAnum(int n , int k){
-        if(k<0){
-            k = k+ count(n);
-        }
+        k= (k%count(n) + count(n)) % count(n);
         int pow = (int)Math.pow(10, k);
         int p = (n%pow)*(int)Math.pow(10, count(n) - k ) ;
         int q = n/pow;

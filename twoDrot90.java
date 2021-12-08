@@ -21,8 +21,7 @@ public class twoDrot90 {
     }
     public static void main(String[] args){
         int n = scn.nextInt();
-        int m = scn.nextInt();
-        int[][] arr = new int[n][m];
+        int[][] arr = new int[n][n];
         input(arr);
         rot90(arr);
     }

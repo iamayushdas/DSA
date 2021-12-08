@@ -1,4 +1,3 @@
-package revision;
 import java.util.Scanner;
 public class isPrime {
 

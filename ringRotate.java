@@ -15,7 +15,7 @@ public class ringRotate {
         int size = 2*(maxr-minr + maxc-minc);
         
         
-        int [] oneD = new int[size ];
+        int [] oneD = new int[size];
         int idx = 0;
         
         for(int i = minr; i<=maxr; i++){
@@ -46,84 +46,71 @@ public class ringRotate {
         return oneD;
         
     }
-    
-   public static void swap( int [] arr, int i , int j){
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-    }
-    public static void reverse(int [] arr, int i, int j){
-         while(i<=j){
-        swap(arr,i,j);
-        i++;    j--;
-    }
-    }
-    public static void  rotate(int [] arr, int r){
-        r%=arr.length;
-        if(r<0){
-            r = r + arr.length;
+
+    public static void reverse(int[] arr, int li , int ri){
+        while(li<=ri){
+            int temp = arr[li];
+            arr[li] = arr[ri];
+            arr[ri] = temp;
+            li++;
+            ri--;
         }
-        reverse(arr, 0, arr.length-r-1);
-        reverse(arr, arr.length-r, arr.length-1);
-        reverse(arr, 0 , arr.length-1);
-        
     }
     
-    
-    public static void from1Dto2D(int [] oneD, int [][] arr, int s){
-        int n = arr.length;         //rows
-        int m = arr[0].length;      //col
-        
-        int minr = s-1; 
+    public static void rotate(int[] arr, int r){
+        int n = arr.length;
+        r%=n;
+        if(r<0){
+            r+=n;
+        }
+        reverse(arr, 0, n-r-1);
+        reverse(arr, n-r, n-1);
+        reverse(arr, 0, n-1);
+    }
+
+    public static void from1Dto2D(int[] oneD, int[][] twoD, int s ){
+        int n = twoD.length;
+        int m = twoD[0].length;
+
+        int minr = s-1;
         int maxr = n-s;
-        
+
         int minc = s-1;
         int maxc = m-s;
-        
-        
-        
-        
-        int idx = 0;
-        
+
+        int index = 0;
+
         for(int i = minr; i<=maxr; i++){
-            arr[i][minc] = oneD[idx];
-            idx++;
+            twoD[i][minc] = oneD[index];
+            index++;
         }
         minc++;
-        
-        for(int j = minc; j<= maxc; j++){
-            arr[maxr][j]=oneD[idx];
-            idx++;
+
+        for(int j = minc; j<=maxc; j++){
+            twoD[maxr][j] = oneD[index];
+            index++;
         }
-        
         maxr--;
-        
+
         for(int i = maxr; i>=minr; i--){
-            arr[i][maxc]=oneD[idx];
-            idx++;
+            twoD[i][maxc] = oneD[index];
+            index++;
         }
         maxc--;
-        
+
         for(int j = maxc; j>=minc; j--){
-            arr[minr][j] = oneD[idx];
-            idx++;
+            twoD[minr][j] = oneD[index];
+            index++;
         }
         minr++;
-        
-       
-    
+
     }
     
-    
-    
-    public static void ringRotate(int [][] arr, int s, int r){
-        //from 2d to 1d
-        //rotate
-        //from 1D to 2D
-        
-        int [] oneD = from2Dto1D(arr, s);
-        rotate(oneD , r);
-        from1Dto2D(oneD, arr,s);
+
+    public static void ringRotate(int[][] arr, int s, int r ){
+        int[] oneD = from2Dto1D(arr, s);
+        rotate(oneD, r);
+        from1Dto2D(oneD,arr, s);
     }
     
     

@@ -1,3 +1,8 @@
+// 0
+// 1       1
+// 2       3       5
+// 8       13      21      34
+// 55      89      144     233     377
 import java.util.Scanner;
 public class pattern12 {
     public static void pattern12(int n){

@@ -1,3 +1,8 @@
+// *                               *
+// *                               *
+// *               *               *
+// *       *               *       *
+// *                               *
 import java.util.Scanner;
 public class pattern20{
     public static void pattern20(int n){

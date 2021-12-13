@@ -5,7 +5,7 @@
 //                 *       *       *
 //         *       *       *       *       *
 // *       *       *       *       *       *       *
-// import java.util.Scanner;
+import java.util.Scanner;
 public class pattern18 {
     public static void pattern18(int n){
         int nst = n, nsp = 0;

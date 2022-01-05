@@ -8,7 +8,7 @@ public class maxInArray {
         int me = arr[idx];
         if(me > recAns){
             return me;
-        }else{
+        }else{ 
             return recAns;
         }
     }

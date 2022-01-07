@@ -1,7 +1,10 @@
 class LL {
 
     Node head;
-
+    private int size;
+    LL(){
+        this.size = 0;
+    }
     class Node{
         String data;
         Node next;
@@ -9,6 +12,7 @@ class LL {
         Node(String data){
             this.data = data;
             this.next = null;
+            size++;
         }
     }
 
@@ -61,6 +65,7 @@ class LL {
             System.out.println("list is empty");
             return;
         }
+        size--;
         Node currNode = head;
         head = currNode.next;
         // head = (head.next).next;   //first se do data remove kr dega
@@ -72,10 +77,23 @@ class LL {
             System.out.println("list is empty");
             return;
         }
-        Node currNode = head;
-        while(currNode.next != null){
-            currNode = currNode.next;
+        size--;
+        if(head.next == null){
+            head = null;
+            return;
         }
+
+        Node secondLastNode = head;
+        Node lastNode  = head.next;
+        while(lastNode.next != null){
+            lastNode = lastNode.next;
+            secondLastNode = secondLastNode.next;
+        }
+        secondLastNode.next = null;
+    }
+
+    public int getsize(){
+        return size;
     }
 
     public static void main(String[] args){
@@ -87,5 +105,8 @@ class LL {
         list.printList();
         list.deleteFirst();
         list.printList();
+        list.deleteLast();
+        list.printList();
+        System.out.println(list.getsize());
     }
 }

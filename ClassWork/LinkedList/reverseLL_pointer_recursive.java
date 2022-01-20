@@ -391,7 +391,7 @@ public class reverseLL_pointer_recursive {
     public void reversePR(){
       // write your code here
       reversePRHelper(this.head);
-      
+      head.next = null;
         //   swap H and T
         Node temp = head;
         head = tail;

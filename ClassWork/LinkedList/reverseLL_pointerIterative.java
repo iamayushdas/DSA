@@ -181,6 +181,17 @@ public class reverseLL_pointerIterative {
  
     public void reversePI(){
       // write your code here
+      Node prev = null;
+      Node curr = head;
+      while(curr!=null){
+          Node forw = curr.next;
+          curr.next = prev;
+          prev = curr;
+          curr = forw;
+      }
+      Node temp = head;
+      head = tail;
+      tail = temp;
     }
   }
 

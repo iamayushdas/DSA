@@ -8,7 +8,7 @@ public class fibonacci {
         }
         System.out.println();
     }
-
+//                                           Memoization method
     public static int fiboR(int n, int[] dp){
         if(n<=1){
             return dp[n] = n;
@@ -22,6 +22,25 @@ public class fibonacci {
         int nm2 = fiboR(n-2, dp);
 
         return dp[n] = nm1 + nm2;
+    }
+
+    //                                          Tabular method
+    public static int fiboM(int N, int[] dp){
+        for(int n = 0; n<dp.length; n++){
+            if(n<=1){
+               dp[n] = n;
+               continue;
+            }
+    
+            int nm1 = dp[n-1];
+            int nm2 = dp[n-2];
+    
+            dp[n] = nm1 + nm2;
+            continue;
+
+        }
+        return dp[N];
+
     }
 
     public static void main(String[] args){

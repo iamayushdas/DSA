@@ -1,11 +1,7 @@
-public class fibonacciM {
-    
-}
-
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class fibonacci {
+public class fibonacciM {
     public static void display(int[] dp){
         for(int e : dp){
             System.out.print(e + " ");

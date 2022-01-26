@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class fibonacciR {
+public class fibonacciT {
     public static void display(int[] dp){
         for(int e : dp){
             System.out.print(e + " ");

@@ -20,7 +20,7 @@ public class k_largest_element {
         // for(int i = 0; i<k ; i++){
         //     System.out.println(pq.peek());
         //     pq.remove();
-        // }
+        // }    //and  -----> 44 41
 
         // sir's method
         PriorityQueue<Integer> pq = new PriorityQueue<>();
@@ -37,6 +37,6 @@ public class k_largest_element {
 
         while(pq.size() != 0){
             System.out.println(pq.remove());
-        }
+        }    // ans ---> 41 44
     }
 }

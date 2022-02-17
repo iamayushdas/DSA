@@ -32,7 +32,7 @@ public class longest_consecutive_sequence {
                 int tempLen = 1;
                 int tempStPt = ele;
 
-                while (hm.containsKey(tempLen + tempStPt)) {
+                while (hm.containsKey(tempStPt + tempLen)) {
                     tempLen++;
                 }
 

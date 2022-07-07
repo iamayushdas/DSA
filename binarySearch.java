@@ -26,3 +26,4 @@ public class binarySearch {
         System.out.println(ans);
     }
 }
+                                                 

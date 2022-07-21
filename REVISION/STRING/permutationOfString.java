@@ -19,7 +19,7 @@ public class permutationOfString {
                 int r = temp%div;
 
                 System.out.print(sb.charAt(r));
-
+                sb.deleteCharAt(r);
                 temp = q;
             }
             System.out.println();
